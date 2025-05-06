@@ -1,5 +1,5 @@
 ---
-title: Ai Final Assessment
+title: AI Agent Assessment
 emoji: 🐨
 colorFrom: gray
 colorTo: blue
@@ -14,30 +14,35 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 # AI Agent for Hugging Face Agents Course
 
-This project implements a simple AI agent for the Hugging Face Agents Course final assessment. The agent is designed to answer a wide variety of questions using a combination of canned responses and generative responses.
+This project implements an intelligent AI agent for the Hugging Face Agents Course final assessment. The agent efficiently processes and responds to a diverse range of questions using a hybrid approach of pattern-matched canned responses and dynamic generative responses.
 
 ## Project Structure
 
-The project follows a simplified architecture with minimal dependencies:
+The project follows a clean, maintainable architecture with minimal dependencies:
 
 ### 1. Main Application
-- `app.py`: Contains both the BasicAgent implementation and the Gradio interface
-  - BasicAgent class with canned responses for common question types
-  - Simple file downloading capability
-  - Reliable submission process to the evaluation server
+- `app.py`: Core functionality containing both the agent implementation and user interface
+  - `BasicAgent` class with sophisticated pattern matching for common question types
+  - File downloading capabilities for resource-dependent queries
+  - Robust submission process to the evaluation server with error handling
 
-### 2. Fault Tolerance
+### 2. Support Modules
+- `utils/`: Helper functions and utilities
+- `tools/`: Task-specific implementations
+- `logs/`: Comprehensive logging for debugging and performance analysis
+
+### 3. Fault Tolerance
 The project includes several fault tolerance mechanisms:
-- Basic error handling for file downloads and API requests
-- Canned responses for common topics to avoid complex API calls
+- Comprehensive error handling for file downloads and API requests
+- Strategic canned responses for common topics to reduce API dependency
 - Timeouts on all external service requests
-- Comprehensive logging
+- Detailed logging for troubleshooting
 
-### 3. Application Features
-- Simple but effective answer generation using pattern matching
+### 4. Application Features
+- Intelligent answer generation using pattern matching and NLP techniques
 - File download support for task-based questions
-- Error recovery
-- Response logging
+- Graceful error recovery and fallback strategies
+- Extensive response logging for quality analysis
 
 ## Dependencies
 
@@ -45,7 +50,22 @@ The project includes several fault tolerance mechanisms:
 - gradio
 - requests
 - pandas
+- Additional libraries specified in requirements.txt
 
 ## Running the Project
 
-The project runs as a Hugging Face Space through the Gradio interface defined in `app.py`. Users can click the "Run Evaluation & Submit All Answers" button, which will fetch questions, run the agent on them, submit answers to the evaluation server, and display the results.
+The project runs as a Hugging Face Space through the Gradio interface defined in `app.py`. Users can interact with the agent by:
+
+1. Accessing the deployed Space
+2. Clicking the "Run Evaluation & Submit All Answers" button
+3. The system will automatically fetch questions, process them through the agent
+4. Submit answers to the evaluation server
+5. Display comprehensive results and metrics
+
+## Deployment
+
+The application is configured to deploy seamlessly on Hugging Face Spaces with the configuration specified in the YAML header of this README.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
